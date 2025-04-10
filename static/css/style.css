@@ -220,6 +220,65 @@ height: auto;
 display: block;
 }
 
+
+
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.skill-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-item::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 110%;
+  background-color: #222;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.skill-item:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.skill-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+.skill-item img:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+
+
+
+
 /* Estilo general del formulario */
 form {
   max-width: 600px;

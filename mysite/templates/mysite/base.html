@@ -3,8 +3,8 @@
 <html lang="es">
   <head>
       <meta charset="UTF-8">
-      <title>fmuruchi</title>
-      <link rel="icon" href="{% static "assets/fm.ico" %}" />
+      <title>fmuruchi.</title>
+      <link rel="icon" href="{% static "assets/icon.ico" %}" />
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,12 @@
       <header class="site-header hidden-on-scroll">
           <nav class="navbar">
               <div class="logo">
-                  <a href="#home">fmuruchi</a>
+                  <a href="#home">fmuruchi.</a>
               </div>
               <ul class="nav-links">
                   <li><a href="#home">Home</a></li>
                   <li><a href="#projects">Projects</a></li>
-                  <li><a href="#about">About Me</a></li>
+                  <li><a href="#skills">Skills</a></li>
                   <li><a href="#contact">Contact</a></li>
               </ul>
           </nav>
@@ -57,10 +57,18 @@
           </div>
         </section>
 
-        <section id="about" class="section">
-          <!-- Título principal -->
-          <h1 class="section-title">About Me</h1>
+        <section id="skills" class="section">
+          <h1 class="section-title">Skills</h1>
+          <div class="skills-grid">
+            {% for skill in skills %}
+              <div class="skill-item" data-tooltip="{{ skill.title }}">
+                <img src="{{ skill.image.url }}" alt="{{ skill.title }}">
+              </div>
+            {% endfor %}
+          </div>
+          
         </section>
+        
 
         <section id="contact" class="section">
           <!-- Título principal -->
