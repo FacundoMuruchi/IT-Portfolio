@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from mysite.views import projects_view
+from mysite.views import base_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', projects_view, name='projects'),
+    path('', base_view, name='base'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

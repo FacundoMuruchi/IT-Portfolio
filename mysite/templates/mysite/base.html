@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <title>fmuruchi</title>
+      <link rel="icon" href="{% static "assets/database.ico" %}" />
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body id="home">
+      
+      <!-- Header de navegación -->
+        <header class="site-header hidden-on-scroll">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="#home">fmuruchi</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>Facundo Muruchi</h1>
+                <p>Software Developer - Machine Learning Engineer</p>
+              </div>
+              <div class="hero-image">
+                <img src="{% static 'assets/perfiljpg.jpg' %}" alt="Facundo Muruchi">
+              </div>
+            </div>
+          </section>
+          
+
+        <section id="projects">
+            <!-- Título principal -->
+            <h1 class="section-title">Projects</h1>
+        
+            <!-- Galería -->
+            <div class="gallery">
+                {% for project in projects %}
+                    <a href="{{ project.url }}" target="_blank" class="card">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                        <div class="title">{{ project.title }}</div>
+                    </a>
+                {% endfor %}
+            </div>
+          </section>
+
+          <section id="about">
+            <!-- Título principal -->
+            <h1 class="section-title">About Me</h1>
+          </section>
+
+          <section id="contact">
+            <!-- Título principal -->
+            <h1 class="section-title">Contact</h1>
+          </section>
+
+      <script src="{% static 'js/scripts.js' %}"></script>
+  </body>
+</html>

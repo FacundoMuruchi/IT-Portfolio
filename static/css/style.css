@@ -1,10 +1,131 @@
-/* static/css/portfolio.css */
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 0 5%;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 2rem;
+  color: #ccc;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* HEADER */
+.hidden-on-scroll {
+  transform: translateY(0);
+}
+
+.hidden-on-scroll.scroll-down {
+  transform: translateY(-100%);
+}
+
+.hidden-on-scroll.scroll-up {
+  transform: translateY(0);
+}
+
+.site-header {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.9;
+  padding: 0.9rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding-left: 0.8rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding-right: 5rem;
+}
+
+.nav-links li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: white;
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+
+
 body {
     margin: 0;
+    padding-top: 2rem;
     font-family: 'Segoe UI', sans-serif;
     background-color: #111;
     color: #fff;
 }
+
+
+/* CARDS */
 
 .gallery {
     column-count: 3;
@@ -25,17 +146,30 @@ body {
   }
   
 
-.card {
+  .card {
+    position: relative;
     display: inline-block;
     width: 100%;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    background-color: #111;
-    position: relative;
     transition: transform 0.2s ease;
+  }
+
+.card .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  box-sizing: border-box;
 }
+
 
 .card:hover {
 transform: scale(1.01);
@@ -47,11 +181,17 @@ height: auto;
 display: block;
 }
 
-.card .title {
-position: absolute;
-bottom: 15px;
-left: 15px;
-color: antiquewhite;
-font-weight: bold;
-font-size: 1rem;
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-image {
+    margin-top: 1.5rem;
+  }
 }
