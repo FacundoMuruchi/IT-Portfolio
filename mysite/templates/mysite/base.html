@@ -4,64 +4,83 @@
   <head>
       <meta charset="UTF-8">
       <title>fmuruchi</title>
-      <link rel="icon" href="{% static "assets/database.ico" %}" />
+      <link rel="icon" href="{% static "assets/fm.ico" %}" />
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dynalight&display=swap" rel="stylesheet">
   </head>
   <body id="home">
       
-      <!-- Header de navegación -->
-        <header class="site-header hidden-on-scroll">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="#home">fmuruchi</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <section id="home" class="hero">
-            <div class="hero-content">
-              <div class="hero-text">
-                <h1>Facundo Muruchi</h1>
-                <p>Software Developer - Machine Learning Engineer</p>
+    <!-- Header de navegación -->
+      <header class="site-header hidden-on-scroll">
+          <nav class="navbar">
+              <div class="logo">
+                  <a href="#home">fmuruchi</a>
               </div>
-              <div class="hero-image">
-                <img src="{% static 'assets/perfiljpg.jpg' %}" alt="Facundo Muruchi">
-              </div>
-            </div>
-          </section>
-          
+              <ul class="nav-links">
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#about">About Me</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </nav>
+      </header>
 
-        <section id="projects">
-            <!-- Título principal -->
-            <h1 class="section-title">Projects</h1>
+      <section id="home" class="section">
+        <div class="hero">
+          <div class="hero-title">
+            <h2>Facundo Muruchi</h2>
+            <h1>PORTFOLIO</h1>
+          </div>
+          <div class="footer-home">
+            <p>Software Developer – Machine Learning Engineer</p>
+          </div>
+        </div>
+      </section>
+      
         
-            <!-- Galería -->
-            <div class="gallery">
-                {% for project in projects %}
-                    <a href="{{ project.url }}" target="_blank" class="card">
-                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
-                        <div class="title">{{ project.title }}</div>
-                    </a>
-                {% endfor %}
-            </div>
-          </section>
 
-          <section id="about">
-            <!-- Título principal -->
-            <h1 class="section-title">About Me</h1>
-          </section>
+      <section id="projects" class="section">
+          <!-- Título principal -->
+          <h1 class="section-title">Projects</h1>
+      
+          <!-- Galería -->
+          <div class="gallery">
+              {% for project in projects %}
+                  <a href="{{ project.url }}" target="_blank" class="card">
+                      <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                      <div class="title">{{ project.title }}</div>
+                  </a>
+              {% endfor %}
+          </div>
+        </section>
 
-          <section id="contact">
-            <!-- Título principal -->
-            <h1 class="section-title">Contact</h1>
-          </section>
+        <section id="about" class="section">
+          <!-- Título principal -->
+          <h1 class="section-title">About Me</h1>
+        </section>
 
-      <script src="{% static 'js/scripts.js' %}"></script>
+        <section id="contact" class="section">
+          <!-- Título principal -->
+          <h1 class="section-title">Contact</h1>
+
+          <form action="https://formsubmit.co/facundomuruchi01@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <textarea type="text" name="message" rows="5" placeholder="Message" required></textarea>
+            <input type="hidden" name="_next" value="{% url "thanks" %}">
+            <button type="submit">Send</button>
+          </form>    
+
+        </section>
+
+        <script src="{% static 'js/scripts.js' %}"></script>
+
+        <footer class="footer">
+          <p>fmuruchi © 2025</p>
+        </footer>          
   </body>
 </html>

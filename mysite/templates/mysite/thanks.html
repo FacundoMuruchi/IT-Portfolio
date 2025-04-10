@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <title>fmuruchi</title>
+      <link rel="icon" href="{% static "assets/fm.ico" %}" />
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dynalight&display=swap" rel="stylesheet">
+  </head>
+  <body id="home">
+      
+      <!-- Header de navegación -->
+        <header class="site-header hidden-on-scroll">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="#home">fmuruchi</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home" class="section">
+          <div class="hero">
+            <div class="hero-title">
+              <h2>email sent</h2>
+              <h1>THANKS!</h1>
+            </div>
+            <div class="footer">
+              <p>I'll reply to you shortly!</p>
+            </div>
+          </div>
+        </section>
+
+          <script src="{% static 'js/scripts.js' %}"></script>
+
+  </body>
+</html>

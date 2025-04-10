@@ -1,24 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let lastScroll = 0;
-    const header = document.querySelector('.hidden-on-scroll');
+// linea de home transicion
+document.addEventListener("DOMContentLoaded", () => {
+    const heroTitle = document.querySelector(".hero-title");
+    heroTitle.classList.add("animate-line");
+  });
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+// smooth scroll
+document.addEventListener("DOMContentLoaded", () => {
+const sections = document.querySelectorAll('.section');
 
-        if (currentScroll <= 0) {
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
-            return;
-        }
-
-        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-            header.classList.remove('scroll-up');
-            header.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
-        }
-
-        lastScroll = currentScroll;
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // solo animar una vez
+    }
     });
+}, {
+    threshold: 0.1
 });
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+});
+  

@@ -23,6 +23,7 @@ from mysite.views import base_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', base_view, name='base'),
+    path('thanks/', base_view, name='thanks'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
