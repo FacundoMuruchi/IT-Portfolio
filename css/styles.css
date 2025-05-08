@@ -10,6 +10,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -78,6 +79,17 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
+
+i.fa-brands,
+i.fa-solid {
+    transition: color 0.3s ease;
+}
+
+i.fa-brands:hover,
+i.fa-solid:hover {
+    color: var(--bs-primary);
+}
+
 
 *,
 *::before,
@@ -10929,7 +10941,7 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/back.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
