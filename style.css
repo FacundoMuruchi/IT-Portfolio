@@ -385,7 +385,38 @@ a:hover {
     color: var(--color-text);
 }
 
-/* Timeline */
+/* Certification Badge */
+.certification-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+}
+
+.certification-badge>div {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.certification-badge iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .certification-badge>div {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .certification-badge>div {
+        transform: scale(0.6);
+    }
+}
+
+/* Timeline (legacy - can be removed if not used elsewhere) */
 .timeline {
     display: flex;
     flex-direction: column;
