@@ -121,19 +121,15 @@ a:hover {
 /* ===================================
    HERO SECTION
    =================================== */
-@keyframes float {
+@keyframes gridPulse {
 
     0%,
     100% {
-        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
     }
 
-    33% {
-        transform: translate(30px, -30px) scale(1.05);
-    }
-
-    66% {
-        transform: translate(-20px, 20px) scale(0.95);
+    50% {
+        opacity: 0.6;
     }
 }
 
@@ -146,50 +142,75 @@ a:hover {
     position: relative;
     overflow: hidden;
     background:
-        radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 102, 255, 0.06) 0%, transparent 50%);
+        linear-gradient(90deg, rgba(0, 102, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: -1px -1px;
 }
 
-/* Elementos decorativos minimalistas */
+/* Patrón de líneas tecnológicas - Esquina superior derecha */
 .hero::before {
     content: '';
     position: absolute;
-    top: 10%;
-    right: 10%;
-    width: 400px;
-    height: 400px;
-    border: 1px solid rgba(0, 102, 255, 0.15);
-    border-radius: 50%;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background-image:
+        linear-gradient(90deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(0deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% + 1px), transparent calc(50% + 1px)),
+        repeating-linear-gradient(90deg, rgba(0, 102, 255, 0.08) 0px, rgba(0, 102, 255, 0.08) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(0deg, rgba(0, 102, 255, 0.08) 0px, rgba(0, 102, 255, 0.08) 1px, transparent 1px, transparent 20px);
     pointer-events: none;
-    animation: float 15s ease-in-out infinite;
+    animation: gridPulse 4s ease-in-out infinite;
 }
 
+/* Patrón de líneas tecnológicas - Esquina inferior izquierda */
 .hero::after {
     content: '';
     position: absolute;
-    bottom: 15%;
-    left: 5%;
-    width: 300px;
-    height: 300px;
-    border: 1px solid rgba(0, 102, 255, 0.12);
-    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background-image:
+        linear-gradient(90deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(0deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% + 1px), transparent calc(50% + 1px)),
+        repeating-linear-gradient(90deg, rgba(0, 102, 255, 0.06) 0px, rgba(0, 102, 255, 0.06) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(0deg, rgba(0, 102, 255, 0.06) 0px, rgba(0, 102, 255, 0.06) 1px, transparent 1px, transparent 20px);
     pointer-events: none;
-    animation: float 12s ease-in-out infinite reverse;
+    animation: gridPulse 4s ease-in-out infinite 2s;
 }
 
 @media (max-width: 768px) {
+    .hero {
+        background-size: 30px 30px;
+    }
+
     .hero::before {
-        width: 200px;
-        height: 200px;
-        top: 5%;
-        right: 5%;
+        width: 150px;
+        height: 150px;
     }
 
     .hero::after {
-        width: 150px;
-        height: 150px;
-        bottom: 10%;
-        left: 2%;
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        background-size: 25px 25px;
+    }
+
+    .hero::before {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero::after {
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -395,6 +416,13 @@ a:hover {
    =================================== */
 .projects-section {
     padding: var(--spacing-xxl) 0;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(0, 102, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: -1px -1px;
 }
 
 .section-heading {
