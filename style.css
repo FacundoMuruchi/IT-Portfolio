@@ -135,7 +135,7 @@ a:hover {
 }
 
 .hero-name {
-    font-size: clamp(3rem, 10vw, 8rem);
+    font-size: clamp(4rem, 10vw, 8rem);
     font-weight: var(--font-weight-bold);
     letter-spacing: -0.03em;
     margin-bottom: var(--spacing-sm);
@@ -154,14 +154,14 @@ a:hover {
 }
 
 .hero-title {
-    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: var(--font-weight-normal);
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-xs);
 }
 
 .hero-subtitle {
-    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.125rem);
     font-weight: var(--font-weight-light);
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-sm);
@@ -172,7 +172,7 @@ a:hover {
 }
 
 .hero-location {
-    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.125rem);
     color: var(--color-text-secondary);
     display: flex;
     align-items: center;
