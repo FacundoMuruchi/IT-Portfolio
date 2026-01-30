@@ -456,12 +456,55 @@ a:hover {
     background-position: -1px -1px;
 }
 
+/* Decorative Tech Labels */
+.tech-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tech-label {
+    position: absolute;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 400;
+    color: rgba(0, 102, 255, 0.08);
+    transform: rotate(-12deg);
+    user-select: none;
+}
+
+.tech-label:nth-child(even) {
+    transform: rotate(15deg);
+}
+
+.tech-label:nth-child(3n) {
+    transform: rotate(-18deg);
+}
+
+@media (max-width: 768px) {
+    .tech-label {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-labels {
+        display: none;
+    }
+}
+
 .section-heading {
     font-size: clamp(2rem, 5vw, 4rem);
     font-weight: var(--font-weight-bold);
     letter-spacing: -0.02em;
     margin-bottom: var(--spacing-xl);
     line-height: 1.1;
+    position: relative;
+    z-index: 1;
 }
 
 .heading-part {
@@ -478,6 +521,8 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
 }
 
 .project-card {
