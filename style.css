@@ -6,9 +6,9 @@
     --color-bg: #ffffff;
     --color-text: #0a0a0a;
     --color-text-secondary: #666666;
-    --color-accent: #0066ff;
+    --color-accent: #CC9B7A;
     --color-border: #e5e5e5;
-    --color-hover: #f5f5f5;
+    --color-hover: #F7F3EF;
 
     /* Social Media Brand Colors */
     --color-twitter: #1DA1F2;
@@ -142,8 +142,8 @@ a:hover {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(217, 119, 87, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(217, 119, 87, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
     background-position: -1px -1px;
 }
@@ -157,10 +157,10 @@ a:hover {
     width: 300px;
     height: 300px;
     background-image:
-        linear-gradient(90deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% + 1px), transparent calc(50% + 1px)),
-        linear-gradient(0deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% - 1px), rgba(0, 102, 255, 0.15) calc(50% + 1px), transparent calc(50% + 1px)),
-        repeating-linear-gradient(90deg, rgba(0, 102, 255, 0.08) 0px, rgba(0, 102, 255, 0.08) 1px, transparent 1px, transparent 20px),
-        repeating-linear-gradient(0deg, rgba(0, 102, 255, 0.08) 0px, rgba(0, 102, 255, 0.08) 1px, transparent 1px, transparent 20px);
+        linear-gradient(90deg, transparent 0%, transparent calc(50% - 1px), rgba(217, 119, 87, 0.15) calc(50% - 1px), rgba(217, 119, 87, 0.15) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(0deg, transparent 0%, transparent calc(50% - 1px), rgba(217, 119, 87, 0.15) calc(50% - 1px), rgba(217, 119, 87, 0.15) calc(50% + 1px), transparent calc(50% + 1px)),
+        repeating-linear-gradient(90deg, rgba(217, 119, 87, 0.08) 0px, rgba(217, 119, 87, 0.08) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(0deg, rgba(217, 119, 87, 0.08) 0px, rgba(217, 119, 87, 0.08) 1px, transparent 1px, transparent 20px);
     pointer-events: none;
     animation: gridPulse 4s ease-in-out infinite;
 }
@@ -174,10 +174,10 @@ a:hover {
     width: 250px;
     height: 250px;
     background-image:
-        linear-gradient(90deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% + 1px), transparent calc(50% + 1px)),
-        linear-gradient(0deg, transparent 0%, transparent calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% - 1px), rgba(0, 102, 255, 0.12) calc(50% + 1px), transparent calc(50% + 1px)),
-        repeating-linear-gradient(90deg, rgba(0, 102, 255, 0.06) 0px, rgba(0, 102, 255, 0.06) 1px, transparent 1px, transparent 20px),
-        repeating-linear-gradient(0deg, rgba(0, 102, 255, 0.06) 0px, rgba(0, 102, 255, 0.06) 1px, transparent 1px, transparent 20px);
+        linear-gradient(90deg, transparent 0%, transparent calc(50% - 1px), rgba(217, 119, 87, 0.12) calc(50% - 1px), rgba(217, 119, 87, 0.12) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(0deg, transparent 0%, transparent calc(50% - 1px), rgba(217, 119, 87, 0.12) calc(50% - 1px), rgba(217, 119, 87, 0.12) calc(50% + 1px), transparent calc(50% + 1px)),
+        repeating-linear-gradient(90deg, rgba(217, 119, 87, 0.06) 0px, rgba(217, 119, 87, 0.06) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(0deg, rgba(217, 119, 87, 0.06) 0px, rgba(217, 119, 87, 0.06) 1px, transparent 1px, transparent 20px);
     pointer-events: none;
     animation: gridPulse 4s ease-in-out infinite 2s;
 }
@@ -450,8 +450,8 @@ a:hover {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px);
+        linear-gradient(90deg, rgba(217, 119, 87, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(217, 119, 87, 0.08) 1px, transparent 1px);
     background-size: 50px 50px;
     background-position: -1px -1px;
 }
@@ -472,7 +472,7 @@ a:hover {
     font-family: 'Caveat', cursive;
     font-size: clamp(2rem, 4vw, 4rem);
     font-weight: 400;
-    color: rgba(0, 102, 255, 0.08);
+    color: rgba(217, 120, 87, 0.20);
     transform: rotate(-12deg);
     user-select: none;
 }
@@ -784,7 +784,8 @@ a:hover {
 .footer {
     padding: var(--spacing-xl) 0;
     text-align: center;
-    border-top: 1px solid var(--color-border);
+    background: #1A1816;
+    border-top: none;
 }
 
 .back-to-top {
@@ -793,26 +794,49 @@ a:hover {
     font-weight: var(--font-weight-medium);
     margin-bottom: var(--spacing-md);
     padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     transition: all var(--transition-medium);
+    color: #F5F1ED;
 }
 
 .back-to-top:hover {
-    background: var(--color-text);
-    color: var(--color-bg);
-    border-color: var(--color-text);
-    opacity: 1;
+    background: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
 }
 
 .footer-credit {
     font-size: 0.9rem;
-    color: var(--color-text-secondary);
+    color: rgba(245, 241, 237, 0.4);
 }
 
 .footer-credit a {
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    text-decoration: none;
+    color: rgba(245, 241, 237, 0.4);
+    transition: color var(--transition-medium);
+    position: relative;
+    display: inline-block;
+}
+
+.footer-credit a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: rgba(245, 241, 237, 1);
+    transition: width var(--transition-medium);
+}
+
+.footer-credit a:hover {
+    color: rgba(245, 241, 237, 1);
+}
+
+.footer-credit a:hover::after {
+    width: 100%;
 }
 
 /* ===================================
