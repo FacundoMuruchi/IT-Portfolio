@@ -1,0 +1,79 @@
+/* Custom styles for AI Engineer Portfolio */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll-based expansion animation for featured section */
+#featured-container {
+    max-width: 56rem;
+    /* Starting width */
+    border-radius: 2rem;
+    /* Transitions removed - now controlled by JavaScript for smooth gradual effect */
+}
+
+/* Pulsing orange glow animation */
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 25px 50px -12px rgba(154, 52, 18, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 25px 50px -12px rgba(154, 52, 18, 0.5);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Animated underline effect */
+@keyframes underline-draw {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.animated-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+}
+
+/* Trigger animation when visible class is added */
+.animated-underline.visible::after {
+    animation: underline-draw 1.5s ease-out forwards;
+}
