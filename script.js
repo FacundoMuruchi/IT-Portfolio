@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Gradual scroll-based expansion animation for featured section
     const featuredContainer = document.getElementById('featured-container');
     if (featuredContainer) {
+        let ticking = false;
+
         function updateExpansion() {
             const rect = featuredContainer.getBoundingClientRect();
             const windowHeight = window.innerHeight;
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Interpolate max-width - responsive to viewport size
             const viewportWidth = window.innerWidth;
             // Start at 70% of viewport width (works for both mobile and desktop)
-            const startWidthPercentage = 60;
+            const startWidthPercentage = 70;
             const endWidthPercentage = 100;
             const currentWidthPercentage = startWidthPercentage + (endWidthPercentage - startWidthPercentage) * progress;
 
@@ -73,11 +75,20 @@ document.addEventListener('DOMContentLoaded', function () {
             // Apply styles
             featuredContainer.style.maxWidth = `${currentWidthPercentage}%`;
             featuredContainer.style.borderRadius = `${currentRadius}px`;
+
+            ticking = false;
         }
 
-        // Update on scroll and resize
-        window.addEventListener('scroll', updateExpansion);
-        window.addEventListener('resize', updateExpansion);
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateExpansion);
+                ticking = true;
+            }
+        }
+
+        // Update on scroll and resize with requestAnimationFrame for smooth performance
+        window.addEventListener('scroll', requestTick, { passive: true });
+        window.addEventListener('resize', requestTick, { passive: true });
 
         // Initial update
         updateExpansion();

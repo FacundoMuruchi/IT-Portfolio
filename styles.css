@@ -28,6 +28,10 @@ html {
     /* Starting width */
     border-radius: 2rem;
     /* Transitions removed - now controlled by JavaScript for smooth gradual effect */
+    /* GPU acceleration and performance hints */
+    transform: translateZ(0);
+    will-change: max-width, border-radius;
+    backface-visibility: hidden;
 }
 
 /* Pulsing orange glow animation */

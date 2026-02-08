@@ -12,6 +12,8 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
     <link rel="icon" href="assets/robot.ico" type="image/x-icon" />
+    <!-- Preload critical images for smooth animations -->
+    <link rel="preload" href="assets/ball.jpg" as="image" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css" />
@@ -50,11 +52,12 @@
     <header class="w-full px-6 py-20 md:py-32 bg-background-light dark:bg-background-dark overflow-hidden">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 z-10">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight tracking-tight text-balance mb-8">
+                <h1
+                    class="text-5xl md:text-7xl lg:text-8xl font-serif leading-tight tracking-tight text-balance mb-8 text-center">
                     Facundo Muruchi
                 </h1>
                 <p
-                    class="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl text-center">
+                    class="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl text-center mx-auto">
                     AI Engineer
                 </p>
             </div>
@@ -351,9 +354,6 @@
             <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight text-white dark:text-primary">
                 Let's build something <br /> <span class="italic text-neutral-400 animated-underline">intelligent</span>
             </h2>
-            <p class="text-lg text-neutral-400 dark:text-neutral-600 max-w-xl mb-12">
-                Contact me.
-            </p>
             <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
                 <a class="group flex items-center gap-2 text-lg font-medium text-white dark:text-primary hover:text-neutral-400 dark:hover:text-neutral-500 transition-colors"
                     href="mailto:facundomuruchi01@gmail.com">
